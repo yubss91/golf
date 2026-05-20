@@ -14,8 +14,8 @@
             --border-color: #e0dcd3;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Malgun Gothic', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); display: flex; justify-content: center; padding: 0 0 40px 0; }
-        .container { width: 100%; max-width: 500px; background-color: var(--bg-color); }
+        body { background-color: var(--bg-color); color: var(--text-main); display: flex; justify-content: center; padding: 0; }
+        .container { width: 100%; max-width: 500px; background-color: var(--bg-color); display: flex; flex-direction: column; min-height: 100vh; }
         
         /* 상단 헤더 */
         .header { background-color: var(--primary-color); color: white; padding: 30px 24px; position: relative; overflow: hidden; }
@@ -24,8 +24,8 @@
         .header h1 { font-size: 28px; font-weight: bold; margin-bottom: 10px; }
         .header .date { font-size: 14px; opacity: 0.9; }
 
-        .content { padding: 24px; }
-        .section-title { font-size: 13px; color: var(--text-sub); letter-spacing: 2px; margin: 25px 0 12px 0; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; font-weight: normal; }
+        .content { padding: 24px; flex: 1; }
+        .section-title { font-size: 14px; color: var(--text-sub); letter-spacing: 2px; margin: 25px 0 12px 0; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; font-weight: normal; }
         .section-title:first-of-type { margin-top: 10px; }
 
         /* 조 편성 및 티업 */
@@ -37,11 +37,17 @@
         .tee-time span { font-size: 12px; color: var(--text-sub); font-weight: normal; margin-left: 4px; }
         .members { font-size: 16px; font-weight: bold; color: #444; letter-spacing: 0.5px; }
 
-        /* 식당 카드 */
+        /* 식당 및 기타 카드 */
         .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .restaurant-title { font-size: 18px; font-weight: bold; display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+        .card-title-group { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+        .restaurant-title { font-size: 18px; font-weight: bold; }
+        .meal-time { font-size: 17px; font-weight: bold; color: #d32f2f; }
         .restaurant-addr { font-size: 13px; color: var(--text-sub); line-height: 1.5; margin-bottom: 16px; }
         
+        /* 기타 섹션 */
+        .etc-text { font-size: 16px; font-weight: bold; color: #333; display: flex; align-items: center; gap: 6px; }
+        .secret-tag { font-size: 13px; color: #999; font-weight: normal; }
+
         /* 버튼 스타일 */
         .btn-group { display: flex; gap: 10px; }
         .btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px 0; border-radius: 6px; font-size: 13px; font-weight: bold; text-decoration: none; border: none; cursor: pointer; color: white; }
@@ -49,6 +55,9 @@
         .btn-naver { background-color: #03c75a; }
 
         .divider { border-top: 1px dashed var(--border-color); margin: 25px 0; }
+
+        /* 하단 푸터 그린 바 */
+        .footer-banner { background-color: var(--primary-color); color: white; text-align: center; padding: 25px 0; font-size: 18px; font-weight: bold; letter-spacing: 1px; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -56,7 +65,7 @@
         <div class="header">
             <div class="sub">라운드 공지</div>
             <h1>로제비앙 CC</h1>
-            <div class="date">2026년 5월 26일 (화) &nbsp;·&nbsp; 네오 → 로제 코스</div>
+            <div class="date">2026년 5월 26일 (화) &nbsp;·&nbsp; ネオ → ロゼ 코스</div>
         </div>
 
         <div class="content">
@@ -82,7 +91,10 @@
 
             <h2 class="section-title">점심 식사</h2>
             <div class="card">
-                <div class="restaurant-title">🍚 토바기보리밥</div>
+                <div class="card-title-group">
+                    <div class="restaurant-title">🍚 토바기보리밥</div>
+                    <div class="meal-time">10:30</div>
+                </div>
                 <div class="restaurant-addr">
                     경기 광주시 곤지암읍 광여로 320<br>
                     <span>(지번: 곤지암리 357-3)</span>
@@ -92,6 +104,19 @@
                     <a href="https://map.naver.com/v5/search/토바기보리밥" target="_blank" class="btn btn-naver">💚 네이버맵 길찾기</a>
                 </div>
             </div>
+
+            <div class="divider"></div>
+
+            <h2 class="section-title">기타</h2>
+            <div class="card">
+                <div class="etc-text">
+                    📢 주간회의 없이 바로 이동 <span class="secret-tag">(비밀)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-banner">
+            ⛳ 즐거운 라운딩 되세요!
         </div>
     </div>
 </body>

@@ -25,8 +25,12 @@
         .header .date { font-size: 14px; opacity: 0.9; }
 
         .content { padding: 24px; flex: 1; }
-        .section-title { font-size: 14px; color: var(--text-sub); letter-spacing: 2px; margin: 25px 0 12px 0; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; font-weight: normal; }
-        .section-title:first-of-type { margin-top: 10px; }
+        
+        /* 섹션 타이틀 그룹 (점심식사 + 시간 레이아웃용) */
+        .title-group { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin: 25px 0 12px 0; }
+        .title-group:first-of-type { margin-top: 10px; }
+        .section-title { font-size: 14px; color: var(--text-sub); letter-spacing: 2px; font-weight: normal; }
+        .title-time { font-size: 14px; font-weight: bold; color: var(--text-main); }
 
         /* 조 편성 및 티업 */
         .tee-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 25px; }
@@ -39,9 +43,7 @@
 
         /* 식당 및 기타 카드 */
         .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .card-title-group { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
-        .restaurant-title { font-size: 18px; font-weight: bold; }
-        .meal-time { font-size: 17px; font-weight: bold; color: #d32f2f; }
+        .restaurant-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
         .restaurant-addr { font-size: 13px; color: var(--text-sub); line-height: 1.5; margin-bottom: 16px; }
         
         /* 기타 섹션 */
@@ -65,11 +67,13 @@
         <div class="header">
             <div class="sub">라운드 공지</div>
             <h1>로제비앙 CC</h1>
-            <div class="date">2026년 5월 26일 (화) &nbsp;·&nbsp; ネオ → ロゼ 코스</div>
+            <div class="date">2026년 5월 26일 (화) &nbsp;·&nbsp; 네오 → 로제 코스</div>
         </div>
 
         <div class="content">
-            <h2 class="section-title">조 편성 & 티업 시간</h2>
+            <div class="title-group">
+                <h2 class="section-title">조 편성 & 티업 시간</h2>
+            </div>
             <div class="tee-list">
                 <div class="tee-item">
                     <div class="badge">1조</div>
@@ -89,12 +93,12 @@
 
             <div class="divider"></div>
 
-            <h2 class="section-title">점심 식사</h2>
+            <div class="title-group">
+                <h2 class="section-title">점심 식사</h2>
+                <div class="title-time">(식사 시간 10:30)</div>
+            </div>
             <div class="card">
-                <div class="card-title-group">
-                    <div class="restaurant-title">🍚 토바기보리밥</div>
-                    <div class="meal-time">10:30</div>
-                </div>
+                <div class="restaurant-title">🍚 토바기보리밥</div>
                 <div class="restaurant-addr">
                     경기 광주시 곤지암읍 광여로 320<br>
                     <span>(지번: 곤지암리 357-3)</span>
@@ -107,7 +111,9 @@
 
             <div class="divider"></div>
 
-            <h2 class="section-title">기타</h2>
+            <div class="title-group">
+                <h2 class="section-title">기타</h2>
+            </div>
             <div class="card">
                 <div class="etc-text">
                     📢 주간회의 없이 바로 이동 <span class="secret-tag">(비밀)</span>
